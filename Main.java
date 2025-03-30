@@ -43,7 +43,7 @@ public class Main {
 
 
             if (days1 == days) {
-
+i=i++;
                 System.out.println("Набранно очков : " + i);
 
             } else if (days1 != days) {
