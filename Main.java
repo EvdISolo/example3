@@ -22,42 +22,44 @@ public class Main {
 
         System.out.println(" Вас привествует игра ");
 
+        int i = 0;
+        int days1 = 0;
         while (true) {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Введите год в формате **** \n");
-            int year = scanner.nextInt();
-            Scanner scanner2 = new Scanner(System.in);
+            int year = Integer.parseInt(scanner.nextLine());
             System.out.println("Введите количество дней в формате *** \n");
-            int days = scanner.nextInt();
-            int days1 = 0;
-            int i=0;
-                if (year % 400 == 0) {
-                    days1 = 366;
+            int days = Integer.parseInt(scanner.nextLine());
 
 
-                } else if (year % 100 == 0) {
-                    days1 = 365;
-
-                } else if (year % 4 == 0) {
-                    days1 = 366;
-
-                } else  if (days1 == days) {
-                    System.out.println("Набранно очков: " + i);
-                    i=i++;
-
-                } else if (days1 != days) {
-                    System.out.println("Игра законченна набранно + " + i +" очков");
-
-                    break;
-                }
-
-
-
-
-
+            if (year % 400 == 0) {
+                days1 = 366;
             }
+            if (year % 100 != 0 & year % 4 == 0) {
+                days1 = 366;
+
+
+            } else days1 = 365;
+
+
+            if (days1 == days) {
+
+                System.out.println("Набранно очков : " + i);
+
+            } else if (days1 != days) {
+                System.out.println("Игра закончена набранно очков " + i);
+                break;
+            }
+
+
         }
+
     }
+}
+
+
+
+       
 
 
 
